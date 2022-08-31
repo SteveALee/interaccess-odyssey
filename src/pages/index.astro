@@ -1,102 +1,38 @@
 ---
-import { Container, FeatureCard } from '@odyssey-theme/components';
+import { Button } from '@odyssey-theme/components';
 import Layout from '../layouts/Page.astro';
-import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
+import TextAndImageHero from '../components/heros/TextAndImageHero.astro';
 ---
 
 <Layout>
-	<HomeHeroSection />
-	<Container>
-		<section class="feature-card__section">
-			<h2>Landing Pages</h2>
+	<TextAndImageHero>
+		<div slot="text-container">
+			<p class="magenta bold">Beyond accessibility conformance</p>
+			<h1>Don't be a <span class="magenta">Robot</span></h1>
 			<p>
-				Use one of our preconfigured landing pages to jumpstart your website or
-				ad campaign.
+				Accessibility and usability are at the heart of a quality user
+				experience. We care about helping you build the best experiences
+				for everyone
 			</p>
-			<div class="feature-card__grid">
-				<FeatureCard
-					href="/landing-pages/landing-1"
-					imgSrc="/assets/images/home/screenshots/landing-1.png"
-					title="Landing Page 1"
-				/>
-				<FeatureCard
-					href="/landing-pages/landing-2"
-					imgSrc="/assets/images/home/screenshots/landing-2.png"
-					title="Landing Page 2"
-				/>
-			</div>
-		</section>
-	</Container>
-
-	<Container>
-		<section class="feature-card__section">
-			<h2>Company Pages</h2>
-			<p>
-				Use one of our prebuilt company pages for your about page, contact page,
-				legal pages, blog posts, etc.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard
-					href="/company/about"
-					imgSrc="/assets/images/home/screenshots/about.png"
-					title="About Page"
-				/>
-				<FeatureCard
-					href="/company/contact"
-					imgSrc="/assets/images/home/screenshots/contact.png"
-					title="Contact Page"
-				/>
-				<FeatureCard
-					href="/blog/"
-					imgSrc="/assets/images/home/screenshots/blog.png"
-					title="Blog Page"
-				/>
-				<FeatureCard
-					href="/blog/posts/remote-work-mental-health"
-					imgSrc="/assets/images/home/screenshots/blog-post.png"
-					title="Blog Post"
-				/>
-				<FeatureCard
-					href="/company/legal"
-					imgSrc="/assets/images/home/screenshots/legal.png"
-					title="Legal Page"
-				/>
-			</div>
-		</section>
-	</Container>
-
-	<Container>
-		<section class="feature-card__section">
-			<h2>Theme Pages</h2>
-			<p>Learn more about how to set up and use the Odyssey Theme.</p>
-			<div class="feature-card__grid">
-				<FeatureCard
-					href="/theme/get-started"
-					imgSrc="/assets/images/home/screenshots/get-started.png"
-					title="Get Started"
-				/>
-				<FeatureCard
-					href="/theme/style-guide"
-					imgSrc="/assets/images/home/screenshots/style-guide.png"
-					title="Style Guide"
-				/>
-			</div>
-		</section>
-	</Container>
+		</div>
+		<div slot="btns-container">
+			<Button href="/@@@" materialIcon="chevron_right">Learn more</Button>
+		</div>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/interaccess-robot.png"
+				alt="InterAccess robot logo"
+				id="home-hero-image"
+			/>
+		</picture>
+	</TextAndImageHero>
 </Layout>
 
 <style>
-	.feature-card__section {
-		margin: var(--section-margin) auto;
+	.magenta {
+		color: magenta;
 	}
-	.feature-card__grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: var(--theme-grid-gap);
-	}
-	@media (max-width: 768px) {
-		.feature-card__grid {
-			grid-template-columns: 1fr;
-		}
+	.bold {
+		font-weight: bold;
 	}
 </style>
