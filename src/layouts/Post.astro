@@ -7,16 +7,9 @@ const {content: {title, description, publishDate, canonicalURL, featuredImage, t
 
 const allTagsData = generateTagData(tags);
 
-const seo = {
-	title,
-	description,
-  publishDate,
-	canonicalURL,
-	image: featuredImage,
-};
 ---
 
-<Layout seo={seo}> 
+<Layout> 
   <div class="post-header__container"> 
     <ul class="post-tags__list">
       {allTagsData.map(tag => (
